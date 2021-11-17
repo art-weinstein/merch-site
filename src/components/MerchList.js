@@ -11,6 +11,7 @@ function MerchList (props) {
           quantity={merch.quantity}
           price={merch.price}
           key={merch.id}
+          onDeletingMerch={props.onDeletingMerch}
         />
       )}
     </React.Fragment>
@@ -19,6 +20,7 @@ function MerchList (props) {
 
 MerchList.propTypes = {
   merchList: PropTypes.array,
+  onDeletingMerch: PropTypes.func,
 }
 
 export default MerchList;

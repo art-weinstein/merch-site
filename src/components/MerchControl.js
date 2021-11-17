@@ -30,6 +30,11 @@ class MerchControl extends React.Component {
     this.setState({ mainMerchList: newMainMerchList, step: 1 });
   }
 
+  handleDeletingMerchFromList = (id) => {
+    const newMainMerchList = this.state.mainMerchList.filter(m => m.id !== id);
+    this.setState({ mainMerchList: newMainMerchList });
+  }
+
   render(){
     let currentDisplay = null;
     if (this.state.step === 1){
@@ -37,6 +42,7 @@ class MerchControl extends React.Component {
         <>
           <MerchList
             merchList ={this.state.mainMerchList}
+            onDeletingMerch={this.handleDeletingMerchFromList}
           />
           <button onClick = {this.handleClick}>Add merch</button>
         </>
