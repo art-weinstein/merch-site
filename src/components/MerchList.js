@@ -7,9 +7,10 @@ function MerchList (props) {
     <React.Fragment>
       {props.merchList.map((merch) =>
         <Merch name={merch.name} 
-          descripton={merch.descriptions}
+          description={merch.description}
           quantity={merch.quantity}
           price={merch.price}
+          key={merch.id}
         />
       )}
     </React.Fragment>
