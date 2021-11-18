@@ -9,6 +9,9 @@ function MerchDetail(props){
   const handleEditClick = (event) => {
     props.onEditClick(event.target.value)
   }
+  const handleAddCart = (event) => {
+    props.onAddToCart(event.target.value)
+  }
   return (
     <>
       <h1>Merch Details</h1>
@@ -16,6 +19,7 @@ function MerchDetail(props){
       <hr/>
       <button value={merch.id} onClick={handleDeletingMerch}>Delete Item</button>
       <button value={merch.id} onClick={handleEditClick}>Edit Item</button>
+      <button value={merch.id} onClick={handleAddCart}>Add to cart</button>
     </>
   );
 }
@@ -24,6 +28,7 @@ MerchDetail.propTypes = {
   merch: PropTypes.object,
   onDeletingMerch: PropTypes.func,
   onEditClick: PropTypes.func,
+  onAddToCart: PropTypes.func,
 };
 
 export default MerchDetail;
