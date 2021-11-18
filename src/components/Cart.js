@@ -1,14 +1,16 @@
 import React from 'react';
-import Merch from './Merch';
+import CartItem from './CartItem';
 import PropTypes from "prop-types";
 
-function MerchList (props) {
+function Cart (props) {
   return(
     <React.Fragment>
-      {props.merchList.map((merch) =>
-        <Merch name={merch.name} 
+      <hr/>
+      <h2>Shopping Cart</h2>
+      {props.cart.map((merch) =>
+        <CartItem name={merch.name} 
           description={merch.description}
-          quantity={merch.quantity}
+          cartQuantity={merch.cartQuantity}
           price={merch.price}
           id={merch.id}
           key={merch.id}
@@ -19,9 +21,9 @@ function MerchList (props) {
   );
 }
 
-MerchList.propTypes = {
-  merchList: PropTypes.array,
+Cart.propTypes = {
+  cart: PropTypes.array,
   onSelectingMerch: PropTypes.func,
 }
 
-export default MerchList;
+export default Cart;
